@@ -1,0 +1,29 @@
+<form #myForm="ngForm">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-3">
+            <select class="form-select" [(ngModel)]="city" name="selCity" >
+                <option selected disabled>Select city</option>
+                <option value="Tel Aviv">Tel Aviv</option>
+                <option value="Rishon LeẔiyyon">Rishon LeẔiyyon</option>
+                <option value="Jerusalem">Jerusalem</option>
+                <option value="Kyiv">Kyiv</option>
+                <option value="Moscow">Moscow</option>
+              </select>
+          </div>
+          <div class="col-md-3">
+            <input class="form-control" type="text" placeholder="standard, metric or imperial"
+                    name="txtMeasureType" [(ngModel)]="measureType">
+          </div>
+          <div class="col-md-1">
+            <div style="margin-top: -9px!important;">
+                <svg (click)="addCity()" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-plus" viewBox="0 0 12 12">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+            </div>
+          </div>
+      </div>
+  </div>
+</form>
+<app-weather-graphical-display [cityWeatherData]="cityWeatherData"></app-weather-graphical-display>
+                

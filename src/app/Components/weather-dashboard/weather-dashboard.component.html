@@ -1,0 +1,32 @@
+<div class="centerElement">
+    <h2>
+        Check Weather
+    </h2>
+</div>
+    
+<ul>
+    <li *ngFor="let city of weatherData">
+        <app-weather-display [cityWeatherData]="city"
+                (foundCityWeatherData)="foundCityWeatherDataHandler($event)"></app-weather-display>
+    </li>
+</ul>
+
+<br>
+
+<h2>Weather in:</h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 offset-md-2">
+            <div *ngFor="let city of weatherData;index as idx">
+                <div *ngIf="city.weatherData!=undefined">
+                    {{idx+1}}. {{city.cityName}} {{city.weatherData.main.temp}} 
+                    {{city.weatherData.weather[0].description}}
+                    
+                </div>
+            </div>            
+        </div>
+    </div>
+</div>
+
+
+
